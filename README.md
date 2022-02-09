@@ -1,7 +1,7 @@
 ## Test task:
 ### Todo App
 - ReactJS
-- Add, Delete and Update
+- Add, Delete and Update todo items
 - Ascending order by date
 - Uses Local storage
 - Uses styled-components (JS Dynamic styling)
