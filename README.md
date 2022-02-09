@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+## Test task:
+### Todo App
+- ReactJS
+- Add, Delete and Update
+- Uses Local storage
+- Uses styled-components (JS Dynamic styling)
+
+Output Screenshot:
+![Demo Image](/public/main.png)
+
+
+
+# Project Configuration.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
