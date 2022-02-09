@@ -6,7 +6,7 @@
 - Uses styled-components (JS Dynamic styling)
 
 Output Screenshot:
-![Demo Image](/public/main.png)
+![Demo Image](https://raw.githubusercontent.com/Nekores/todo-react-localStorage/main/public/demo.png)
 
 
 
