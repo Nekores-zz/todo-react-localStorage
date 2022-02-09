@@ -10,7 +10,7 @@ function TodoList({
   deleteTodo,
 }) {
   todolist.length &&
-    todolist.sort((a, b) => new Date(a.date) - new Date(b.date))
+    todolist.sort((a, b) => new Date(b.date) - new Date(a.date))
   return (
     <TodoListStyle>
       {todolist.length ? (
