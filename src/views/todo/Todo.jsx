@@ -3,7 +3,15 @@ import { TodoForm, TodoList } from "../../components/index.js"
 import { TodoWrapperStyle } from "./TodoStyle"
 
 export default function Todo() {
-  const currentDate = new Date().toLocaleString().split(",")[0]
+  var today = new Date()
+  var date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate()
+  var time = today.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })
+  var currentDate = date + " " + time
   const [value, setValue] = useState("")
   const [error, setError] = useState(false)
   const [isUpdate, setIsUpdate] = useState(false)
@@ -43,13 +51,13 @@ export default function Todo() {
   }
 
   const updateTodo = (index) => () => {
-    const tt = [...todolist]
-    tt[index].name = value
-    tt[index].date = currentDate
+    const data = [...todolist]
+    data[index].name = value
+    data[index].date = currentDate
 
-    setTodolist(tt)
+    setTodolist(data)
     setIsUpdate(false)
-    saveData(tt)
+    saveData(data)
     setValue("")
   }
   const editTodo = (index, todo) => () => {
@@ -74,6 +82,7 @@ export default function Todo() {
         value={value}
         onChange={onChange}
       />
+
       {error ? (
         <p className="errorMessage">You cant add empty name todo item</p>
       ) : null}

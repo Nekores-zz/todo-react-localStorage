@@ -9,29 +9,42 @@ function TodoList({
   updateTodo,
   deleteTodo,
 }) {
+  todolist.length &&
+    todolist.sort((a, b) => new Date(a.date) - new Date(b.date))
   return (
     <TodoListStyle>
-      {todolist.length
-        ? todolist.map((todo, index) => (
-            <li>
+      {todolist.length ? (
+        todolist.map((todo, index) => (
+          <li>
+            {isUpdate === index ? (
+              <input value={value} onChange={onChange} />
+            ) : (
+              <p>
+                <span className="date">{todo.date} </span>{" "}
+                <span className="name">{todo.name}</span>
+              </p>
+            )}
+            <div className="action-button-group">
               {isUpdate === index ? (
-                <input value={value} onChange={onChange} />
+                <button onClick={updateTodo(index, todo)} className="warning">
+                  Update
+                </button>
               ) : (
-                <>
-                  {todo.date} - {todo.name}
-                </>
+                <button onClick={editTodo(index, todo)} className="warning">
+                  {" "}
+                  edit
+                </button>
               )}
-              <div className="action-button-group">
-                {isUpdate === index ? (
-                  <button onClick={updateTodo(index, todo)} className="warning"> Update</button>
-                ) : (
-                  <button onClick={editTodo(index, todo)} className="warning"> edit</button>
-                )}
-                <button onClick={deleteTodo(index, todo)} className="danger"> delete</button>
-              </div>
-            </li>
-          ))
-        : <p className="defaultInfo"> No todo items</p>}
+              <button onClick={deleteTodo(index, todo)} className="danger">
+                {" "}
+                delete
+              </button>
+            </div>
+          </li>
+        ))
+      ) : (
+        <p className="defaultInfo"> No todo items</p>
+      )}
     </TodoListStyle>
   )
 }

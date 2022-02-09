@@ -14,6 +14,13 @@ export const TodoListStyle = styled.ul`
     margin-top: 10px;
     margin-bottom: 10px;
     align-items: center;
+    span.date{
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      margin-right: 5px;
+      border-radius: 20px;
+    }
     input {
       padding: 8px;
       width: 64%;
