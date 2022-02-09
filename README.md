@@ -2,6 +2,7 @@
 ### Todo App
 - ReactJS
 - Add, Delete and Update
+- Ascending order by date
 - Uses Local storage
 - Uses styled-components (JS Dynamic styling)
 
